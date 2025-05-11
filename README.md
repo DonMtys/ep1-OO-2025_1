@@ -9,9 +9,9 @@ O enunciado do trabalho pode ser encontrado aqui:
 
 ## Dados do Aluno
 
-- **Nome completo:** [Preencher aqui]
-- **Matrícula:** [Preencher aqui]
-- **Curso:** [Preencher aqui]
+- **Nome completo:** joão victor da costa cruz
+- **Matrícula:** 202046185
+- **Curso:** Engenharia de software
 - **Turma:** [Preencher aqui]
 
 ---
