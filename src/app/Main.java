@@ -40,7 +40,6 @@ public class Main {
                     break;
                 case 3:
                     modoAvaliacaoFrequencia();
-                    break;
                 case 0:
                     System.out.println("Saindo do sistema...");
                     break;
@@ -52,7 +51,7 @@ public class Main {
         System.out.println("Sistema encerrado.");
         scanner.close();
     }
-
+//yh
     public static void modoAluno() {
         System.out.println("\n--- MODO ALUNO (A Implementar) ---");
         System.out.println("Funcionalidades do Modo Aluno serão implementadas aqui.");
