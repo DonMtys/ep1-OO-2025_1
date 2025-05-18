@@ -5,6 +5,7 @@ package app;
 import modelo.Aluno;
 import modelo.AlunoNormal;
 import modelo.AlunoEspecial;
+import modelo.Disciplina;
 import java.util.List;        
 import java.util.ArrayList; 
 import java.util.Scanner; 
@@ -12,6 +13,7 @@ import java.util.Scanner;
 public class Main {
     //A baixo a interface da primeira Parte 
 	 private static List<Aluno> listaDeAlunos = new ArrayList<>();
+	 private static List<Disciplina> listaDeDisciplinas = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in); 
     public static void main(String[] args) {
         int opcao;
@@ -144,12 +146,126 @@ public class Main {
         }
         System.out.println("---------------------------------");
     }
+    // modo disciplina criado para o usuario configura 
     public static void modoDisciplinaTurma() {
-        System.out.println("\n--- MODO DISCIPLINA/TURMA (A Implementar) ---");
-        System.out.println("Funcionalidades do Modo Disciplina/Turma serão implementadas aqui.");
-        System.out.println("Pressione Enter para voltar ao menu principal...");
-        scanner.nextLine(); 
+        int opcaoModoDT;
+        do {
+            System.out.println("\n--- MODO DISCIPLINA/TURMA ---");
+            System.out.println("1. Cadastrar Nova Disciplina");
+            System.out.println("2. Listar Disciplinas Cadastradas");
+            System.out.println("0. Voltar ao Menu Principal");
+            System.out.print("Escolha uma opção: ");
+
+            if (scanner.hasNextInt()) {
+                opcaoModoDT = scanner.nextInt();
+                scanner.nextLine();
+            } else {
+                System.out.println("Entrada inválida.");
+                scanner.nextLine(); 
+                opcaoModoDT = -1;
+                continue;
+            }
+
+            switch (opcaoModoDT) {
+                case 1:
+                    cadastrarDisciplina(); 
+                    break;
+                case 2:
+                    listarDisciplinas();   
+                    break;
+                case 0:
+                    System.out.println("Retornando ao Menu Principal...");
+                    break;
+                default:
+                    System.out.println("Opção inválida do Modo Disciplina/Turma.");
+            }
+        } while (opcaoModoDT != 0);
     }
+    
+    public static void cadastrarDisciplina() {
+        System.out.println("\n-- Cadastro de Nova Disciplina --");
+        System.out.print("Nome da disciplina: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Código da disciplina: ");
+        String codigo = scanner.nextLine();     
+        for (Disciplina discExistente : listaDeDisciplinas) {
+            if (discExistente.getCodigo().equalsIgnoreCase(codigo)) {
+                System.out.println("ERRO: Código de disciplina '" + codigo + "' já cadastrado para a disciplina: " + discExistente.getNome());
+                return; 
+            }
+        }
+
+        System.out.print("Carga horária (em horas): ");
+        int cargaHoraria = 0;
+        if (scanner.hasNextInt()) {
+            cargaHoraria = scanner.nextInt();
+            scanner.nextLine();
+        } else {
+            System.out.println("Carga horária inválida. Será definida como 0. Você pode editar depois.");
+            scanner.nextLine();
+        }
+
+        Disciplina novaDisciplina = new Disciplina(nome, codigo, cargaHoraria);
+
+        // Perguntar sobre pré-requisitos
+        System.out.print("Deseja adicionar pré-requisitos para esta disciplina? (s/n): ");
+        String resposta = scanner.nextLine();
+        if (resposta.equalsIgnoreCase("s")) {
+            String codPreRequisito;
+            System.out.println("Digite os códigos das disciplinas pré-requisito. Digite 'fim' para terminar.");
+            do {
+                System.out.print("Código do pré-requisito (ou 'fim'): ");
+                codPreRequisito = scanner.nextLine();
+                if (!codPreRequisito.equalsIgnoreCase("fim") && !codPreRequisito.isEmpty()) {
+                    novaDisciplina.adicionarPreRequisito(codPreRequisito);
+                    System.out.println("Pré-requisito '" + codPreRequisito + "' adicionado.");
+                }
+            } while (!codPreRequisito.equalsIgnoreCase("fim"));
+        }
+
+        listaDeDisciplinas.add(novaDisciplina);
+        System.out.println("----- Disciplina Cadastrada com Sucesso! -----");
+        System.out.println(novaDisciplina.toString()); 
+        System.out.println("---------------------------------------------");
+    }
+
+    public static void listarDisciplinas() {
+        System.out.println("\n-- Lista de Disciplinas Cadastradas --");
+        if (listaDeDisciplinas.isEmpty()) {
+            System.out.println("Nenhuma disciplina cadastrada ainda.");
+            return;
+        }
+        for (Disciplina disciplina : listaDeDisciplinas) {
+            System.out.println(disciplina.toString()); 
+        }
+        System.out.println("------------------------------------");
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     public static void modoAvaliacaoFrequencia() {
         System.out.println("\n--- MODO AVALIAÇÃO/FREQUÊNCIA (A Implementar) ---");
