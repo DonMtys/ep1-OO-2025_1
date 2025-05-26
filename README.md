@@ -50,9 +50,13 @@ ep1-OO-2025_1/
 *Vídeo demonstrando todas as funcionalidades do sistema (máx. 5 minutos)*
 
 ## Prints da Execução
+Print 1 - Menu Principal:
 ![image](https://github.com/user-attachments/assets/acae40c4-cd60-4ab4-b54b-b4b6b9962838)
+Print 2 - Cadastro de Aluno
 ![image](https://github.com/user-attachments/assets/9e303027-bbae-4a59-b015-4b83e85eb1db)
+Print 3 - Cadastra Disciplina/Turma
 ![image](https://github.com/user-attachments/assets/432b4409-e1fe-487b-a463-64607e3f3987)
+Print 3 - relatorio de frência
 ![image](https://github.com/user-attachments/assets/8c383216-9ead-47c6-9534-4f969772dfe5)
 
 
