@@ -133,44 +133,10 @@ Lista de alunos:
 - ✅ **Polimorfismo:** Métodos abstratos com implementações específicas
 - ✅ **Encapsulamento:** Atributos privados com getters/setters apropriados
 
-## Arquitetura do Sistema
-
-### Conceitos de POO Implementados:
-1. **Herança:** Classe abstrata `Aluno` com subclasses `AlunoNormal` e `AlunoEspecial`
-2. **Polimorfismo:** Métodos `getTipoAluno()`, `podeMatricularEmNovaDisciplina()`, `recebeNotas()`
-3. **Encapsulamento:** Todos os atributos privados com métodos de acesso controlado
-
-### Regras de Negócio:
-- **Alunos Especiais:** Limitados a 2 disciplinas simultâneas e não recebem notas
-- **Alunos Normais:** Sem limite de disciplinas e recebem avaliações completas
-- **Turmas:** Controle de capacidade e verificação de duplicidade de matrícula
-
 ## Observações (Extras ou Dificuldades)
-
-### Funcionalidades Extras Implementadas:
-- ✅ **Interface amigável** com menus intuitivos e mensagens claras
-- ✅ **Validações robustas** para todos os inputs do usuário
-- ✅ **Sistema de persistência completo** com backup manual e automático
-- ✅ **Relatórios detalhados** com informações abrangentes
-- ✅ **Tratamento de erros** para casos especiais
-
-### Principais Desafios:
-1. **Implementação da persistência** - Serialização de objetos complexos em formato texto
-2. **Validação de regras de negócio** - Especialmente o limite de disciplinas para alunos especiais
-3. **Gerenciamento de relacionamentos** - Associações entre alunos, turmas e disciplinas
-4. **Interface de usuário** - Criação de menus intuitivos e tratamento de inputs inválidos
-
-### Decisões de Design:
-- **Uso de `List<Aluno>` na classe `Turma`** para facilitar operações de adição/remoção
-- **Método `equals()` customizado** na classe `Aluno` para comparação por matrícula
-- **Separação clara de responsabilidades** entre as classes do modelo e a interface
-
-## Tecnologias Utilizadas
-- **Linguagem:** Java 21
-- **Paradigma:** Programação Orientada a Objetos
-- **Persistência:** Arquivo texto (.txt)
-- **Interface:** Terminal/Console
-- **Controle de Versão:** Git/GitHub
+Durante o projeto do sistema, enfrentei bastante desafios  que contribuiram muito para meu aprendizado.
+Inicialmente tive dificultade para estruturar corretamente a hieraquia das classe, especialmente na definição da classe abastrata 
+onde tive que pesquisas em multiplas fonte e analise de exemplos praticos,consegui compreender melhor como funciona uma herança 
 
 ## Contato
 - **GitHub:** https://github.com/DonMtys
