@@ -46,8 +46,8 @@ ep1-OO-2025_1/
 **Java 21** (compatível com Java 8+)
 
 ## Vídeo de Demonstração
-[Inserir o link para o vídeo no YouTube/Drive aqui]
-*Vídeo demonstrando todas as funcionalidades do sistema (máx. 5 minutos)*
+[[Inserir o link para o vídeo no YouTube/Drive aqui]
+https://drive.google.com/file/d/1WWFyYQaddep-qBBxt4zxNbrT3FkIdg6z/view?usp=sharing)
 
 ## Prints da Execução
 Print 1 - Menu Principal:
